@@ -705,3 +705,168 @@ p {
         justify-content: center;
     }
 }
+/* =========================================
+   VISI & MISI (Judul Besar + Font Miring & Tebal)
+========================================= */
+.visi-misi-section {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 80px 20px;
+}
+
+/* Wrapper untuk Judul + Kartu */
+.vm-wrapper {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* JUDUL SECTION */
+.vm-section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vm-section-title h2 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.vm-title-white {
+    color: #ffffff;
+}
+
+.vm-title-red {
+    color: #e60000;
+}
+
+.vm-divider {
+    width: 80px;
+    height: 4px;
+    background-color: #e60000;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* KARTU */
+.vm-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.vm-card {
+    background-color: #ffffff;
+    border: 2px solid #cc0000;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-5px);
+}
+
+/* IKON */
+.vm-icon-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    background-color: #cc0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    border-bottom-right-radius: 50px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+}
+
+/* KONTEN */
+.vm-content {
+    margin-left: 80px;
+}
+
+/* JUDUL DALAM KARTU: MERAH, TEBAL, MIRING */
+.vm-card-title {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #cc0000;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* EFEK MIRING */
+    font-style: italic;
+}
+
+/* ISI TEKS: RATA KIRI-KANAN */
+.vm-text, .vm-list li {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #333;
+    text-align: justify;
+}
+
+.vm-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.vm-list li {
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .vm-section-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .vm-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .vm-icon-area {
+        position: static;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        border-bottom-right-radius: 20px;
+        margin-bottom: 10px;
+    }
+
+    .vm-content {
+        margin-left: 0;
+    }
+
+    .vm-card-title {
+        font-size: 1.8rem;
+    }
+
+    .vm-text, .vm-list li {
+        font-size: 1.05rem;
+    }
+}
