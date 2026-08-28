@@ -13,7 +13,7 @@ body {
 }
 
 /* =========================================
-   1. NAVBAR (RESPONSIVE FINAL)
+   1. NAVBAR
 ========================================= */
 .navbar {
     position: fixed;
@@ -51,42 +51,24 @@ body {
     text-transform: uppercase;
 }
 
-/* Menyembunyikan menu desktop di HP */
-@media (max-width: 900px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
-/* Menu desktop muncul di layar besar */
-@media (min-width: 900px) {
-    .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 25px;
-        margin: 0;
-        padding: 0;
-    }
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
 
-    .nav-links li a {
-        text-decoration: none;
-        color: white;
-        font-size: 1rem;
-        font-weight: 500;
-        transition: color 0.3s;
-    }
-
-    .nav-links li a:hover, .nav-links li a.active {
-        color: #ff3333;
-    }
-
-    .hamburger {
-        display: none;
-    }
+.nav-links li a:hover, .nav-links li a.active {
+    color: #ff3333;
 }
 
 .nav-right {
@@ -95,7 +77,6 @@ body {
     gap: 15px;
 }
 
-/* Tombol WA di Desktop */
 .btn-wa {
     width: auto;
     height: 40px;
@@ -142,7 +123,7 @@ body {
 }
 
 /* =========================================
-   2. MENU MOBILE (Muncul saat diklik)
+   2. MENU MOBILE
 ========================================= */
 .mobile-menu {
     position: fixed;
@@ -376,7 +357,7 @@ body {
 }
 
 /* =========================================
-   4. TENTANG KAMI (BACKGROUND KANTORAN + TIDAK MENUTUP HERO)
+   4. TENTANG KAMI
 ========================================= */
 .tentang-office-section {
     width: 100%;
@@ -384,7 +365,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 100px; /* Agar tidak menabrak Hero */
+    margin-top: 100px;
     padding: 100px 20px;
     position: relative;
     overflow: hidden;
@@ -666,7 +647,7 @@ body {
 }
 
 /* =========================================
-   6. LAYANAN KAMI (BACKGROUND HITAM POLOS + RESPONSIVE)
+   6. LAYANAN KAMI
 ========================================= */
 .layanan-section {
     width: 100%;
@@ -712,7 +693,7 @@ body {
     max-width: 1400px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive otomatis */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     align-items: stretch;
 }
@@ -773,7 +754,6 @@ body {
     margin-right: 5px;
 }
 
-/* ANIMASI ROTASI (MERAH & PUTIH) */
 .card::before {
     content: '';
     position: absolute;
@@ -793,7 +773,6 @@ body {
     }
 }
 
-/* LAPISAN DALAM (PUTIH) */
 .card::after {
     content: '';
     position: absolute;
@@ -804,11 +783,50 @@ body {
 }
 
 /* =========================================
-   7. GALERI (GRID + OVERLAY)
+   7. GALERI (AUTO SLIDING CAROUSEL)
 ========================================= */
-/* =========================================
-   GALERI (AUTO SLIDING CAROUSEL)
-========================================= */
+.galeri-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 100px 20px;
+    gap: 40px;
+}
+
+.galeri-title-wrap {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.galeri-title {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.galeri-title-white {
+    color: #ffffff;
+}
+
+.galeri-title-red {
+    color: #d32f2f;
+}
+
+.galeri-divider {
+    width: 80px;
+    height: 4px;
+    background-color: #d32f2f;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
 .galeri-slider {
     max-width: 1000px;
     width: 100%;
@@ -857,7 +875,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Tombol Navigasi */
 .galeri-prev,
 .galeri-next {
     position: absolute;
@@ -889,7 +906,6 @@ body {
     color: #000;
 }
 
-/* Dots (Indikator) */
 .galeri-dots {
     position: absolute;
     bottom: 15px;
@@ -915,15 +931,8 @@ body {
     border-radius: 10px;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .galeri-slide {
-        height: 300px;
-    }
-}
-
 /* =========================================
-   8. FOOTER MODERN (HITAM + MERAH) + 2 GARIS DI HP
+   8. FOOTER
 ========================================= */
 .footer-modern {
     position: relative;
@@ -1072,6 +1081,14 @@ body {
         padding: 15px 20px;
     }
 
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
     .hero-content h1 {
         font-size: 3rem;
     }
@@ -1161,13 +1178,12 @@ body {
         padding: 20px;
     }
 
-    .galeri-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .galeri-slider {
+        height: 300px;
     }
 
-    .galeri-item {
-        height: 200px;
+    .galeri-slide {
+        height: 300px;
     }
 
     .galeri-title {
