@@ -1347,3 +1347,229 @@ button {
         font-size: 2rem;
     }
 }
+/* =========================================
+   FLOATING WHATSAPP / HOTLINE BUTTON
+========================================= */
+.floating-wa {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25D366; /* Warna hijau WhatsApp */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.floating-wa:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.floating-wa-text {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background-color: #333;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-wa:hover .floating-wa-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive di HP */
+@media (max-width: 768px) {
+    .floating-wa {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+/* =========================================
+   DESKRIPSI SECTION (TAGLINE)
+========================================= */
+.section-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #aaa;
+    text-align: center;
+    max-width: 600px;
+    margin: 10px auto 30px auto;
+    font-weight: 400;
+}
+
+/* Responsive di HP */
+@media (max-width: 768px) {
+    .section-description {
+        font-size: 0.95rem;
+        margin: 10px auto 20px auto;
+    }
+}
+
+/* =========================================
+   OUR CLIENT (LOGO BESAR & RAPAT)
+========================================= *
+/* =========================================
+   OUR CLIENT (LOGO BESAR & RAPAT - BACKGROUND TETAP PUTIH)
+========================================= */
+.client-section {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 80px 20px;
+    gap: 40px;
+}
+
+.client-title-wrap {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.client-title {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.client-title-white {
+    color: #333333;
+}
+
+.client-title-red {
+    color: #d32f2f;
+}
+
+.client-divider {
+    width: 80px;
+    height: 4px;
+    background-color: #d32f2f;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Deskripsi di bawah judul */
+.client-section .section-description {
+    color: #666;
+    font-size: 1.05rem;
+    margin: 10px auto 20px auto;
+}
+
+/* LOGO GRID - LOGO BESAR & RAPAT */
+.client-grid {
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-logo {
+    width: 100%;
+    height: 140px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.client-logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.client-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Responsive di HP */
+@media (max-width: 768px) {
+    .client-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .client-logo {
+        height: 90px;
+    }
+
+    .client-title {
+        font-size: 2.5rem;
+    }
+}/
+.client-grid {
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Kolom lebih lebar */
+    gap: 15px; /* Jarak antar logo lebih rapat */
+    align-items: center;
+    justify-content: center;
+}
+
+.client-logo {
+    width: 100%;
+    height: 140px; /* LOGO LEBIH BESAR */
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.client-logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.client-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Responsive di HP */
+@media (max-width: 768px) {
+    .client-grid {
+        grid-template-columns: 1fr 1fr; /* 2 kolom di HP */
+        gap: 10px;
+    }
+
+    .client-logo {
+        height: 90px; /* Di HP tetap besar */
+    }
+
+    .client-title {
+        font-size: 2.5rem;
+    }
+}
