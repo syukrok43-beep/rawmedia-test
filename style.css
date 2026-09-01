@@ -321,7 +321,7 @@ button {
 ========================================= */
 .hero-bri-style {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     background-image: url(img/SVN00690\ ok.JPG);
     background-size: cover;
     background-position: center;
@@ -430,7 +430,7 @@ button {
 ========================================= */
 .about-bri-style {
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -731,7 +731,7 @@ button {
 ========================================= */
 .layanan-section {
     width: 100%;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -927,7 +927,7 @@ button {
 ========================================= */
 .galeri-section {
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
