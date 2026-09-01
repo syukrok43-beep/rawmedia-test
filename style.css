@@ -430,12 +430,12 @@ button {
 ========================================= */
 .about-bri-style {
     width: 100%;
-    min-height: 70vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    padding: 100px 20px;
+    padding: 40px 20px;
     position: relative;
 }
 
@@ -564,7 +564,7 @@ button {
 ========================================= */
 .visi-misi-section {
     width: 100%;
-    min-height: 60vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -731,7 +731,7 @@ button {
 ========================================= */
 .layanan-section {
     width: 100%;
-    min-height: 80vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -927,7 +927,7 @@ button {
 ========================================= */
 .galeri-section {
     width: 100%;
-    min-height: 70vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1433,7 +1433,7 @@ button {
 ========================================= */
 .client-section {
     width: 100%;
-    min-height: 60vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
