@@ -1,10 +1,5 @@
-/* ==========================================================================
-   RAW MEDIA INDONESIA - CSS MASTER (FULL RESPONSIVE 1300+ LINES)
-   Dibuat untuk tampil sempurna di HP, Tablet, dan Laptop.
-========================================================================== */
-
 /* =========================================
-   1. RESET & BASIC STYLES
+   RESET & BASIC STYLES
 ========================================= */
 * {
     margin: 0;
@@ -33,7 +28,7 @@ button {
 }
 
 /* =========================================
-   2. NAVBAR (FULL RESPONSIVE)
+   NAVBAR (FULL RESPONSIVE)
 ========================================= */
 .navbar {
     position: fixed;
@@ -142,7 +137,6 @@ button {
     letter-spacing: 1px;
 }
 
-/* Breakpoint HP: Navbar mobile */
 @media (max-width: 768px) {
     .navbar {
         padding: 12px 15px;
@@ -157,7 +151,6 @@ button {
     }
 }
 
-/* Breakpoint Tablet: Navbar sedang */
 @media (min-width: 769px) and (max-width: 1024px) {
     .navbar {
         padding: 15px 25px;
@@ -177,7 +170,6 @@ button {
     }
 }
 
-/* Breakpoint Laptop: Navbar full */
 @media (min-width: 1025px) {
     .navbar {
         padding: 20px 40px;
@@ -198,7 +190,7 @@ button {
 }
 
 /* =========================================
-   3. MOBILE MENU (FULL RESPONSIVE)
+   MOBILE MENU
 ========================================= */
 .mobile-menu {
     position: fixed;
@@ -317,39 +309,41 @@ button {
 }
 
 /* =========================================
-   4. HERO (GAYA BRI - BERSIH & MODERN)
+   HERO (FOTO TRANSPARAN DI PINGGIR KANAN)
 ========================================= */
 .hero-bri-style {
     width: 100%;
-    height: 80vh;
-    background-image: url(img/SVN00690\ ok.JPG);
-    background-size: cover;
-    background-position: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #0a0a0a 0%, #e60000 100%);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 100px 50px 0 50px;
     overflow: hidden;
+    position: relative;
 }
 
 .hero-bri-content {
     color: white;
-    max-width: 500px;
+    max-width: 600px;
     margin-top: 50px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    z-index: 3;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-bri-title {
-    font-size: 2.8rem;
+    font-size: 3rem;
     line-height: 1.2;
     font-weight: 800;
     margin-bottom: 15px;
+    text-align: left;
 }
 
 .hero-bri-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 25px;
+    color: #f0f0f0;
+    margin-bottom: 30px;
 }
 
 .btn-bri-primary {
@@ -369,19 +363,19 @@ button {
     transform: translateY(-3px);
 }
 
-.hero-bri-image {
-    max-width: 600px;
-    width: 100%;
+.hero-bri-transparent-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 800px;
+    width: auto; /* Foto mengikuti tinggi hero */
+    height: 100%; /* Ini membuat foto setinggi layar */
+    z-index: 2;
+    object-fit: cover; /* Foto menutupi sisi kanan dengan rapi */
+    object-position: center bottom; /* Kaki foto menempel di bawah */
 }
 
-.hero-bri-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Breakpoint HP: Hero mobile */
 @media (max-width: 768px) {
     .hero-bri-style {
         padding: 0 20px;
@@ -390,43 +384,43 @@ button {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        background: linear-gradient(135deg, #e60000 0%, #0a0a0a 100%);
     }
 
     .hero-bri-content {
         max-width: 100%;
         text-align: center;
+        margin-top: 80px;
+        z-index: 3;
     }
 
     .hero-bri-title {
         font-size: 2.2rem;
+        color: #ffffff;
     }
 
     .hero-bri-subtitle {
         font-size: 0.9rem;
+        color: #f0f0f0;
     }
 
-    .hero-bri-image {
-        display: none;
-    }
-}
-
-/* Breakpoint Tablet: Hero tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .hero-bri-style {
-        padding: 0 30px;
-    }
-
-    .hero-bri-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-bri-image {
-        max-width: 450px;
+    .hero-bri-transparent-img {
+        display: block;
+        position: static;
+        top: auto;
+        right: auto;
+        transform: none;
+        max-width: 95%;
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        z-index: 2;
+        object-fit: contain;
     }
 }
 
 /* =========================================
-   5. TENTANG KAMI (GAYA BRI - STATISTIK)
+   TENTANG KAMI
 ========================================= */
 .about-bri-style {
     width: 100%;
@@ -497,7 +491,6 @@ button {
     color: #666;
 }
 
-/* Breakpoint HP: Tentang mobile */
 @media (max-width: 768px) {
     .about-bri-style {
         padding: 60px 20px;
@@ -544,7 +537,6 @@ button {
     }
 }
 
-/* Breakpoint Tablet: Tentang tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
     .about-bri-style {
         padding: 80px 30px;
@@ -560,7 +552,7 @@ button {
 }
 
 /* =========================================
-   6. VISI & MISI
+   VISI & MISI
 ========================================= */
 .visi-misi-section {
     width: 100%;
@@ -648,7 +640,7 @@ button {
     color: white;
     font-size: 2rem;
     border-bottom-right-radius: 50px;
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .vm-content {
@@ -681,7 +673,6 @@ button {
     margin-bottom: 10px;
 }
 
-/* Breakpoint HP: Visi Misi mobile */
 @media (max-width: 768px) {
     .visi-misi-section {
         padding: 60px 20px;
@@ -719,7 +710,6 @@ button {
     }
 }
 
-/* Breakpoint Tablet: Visi Misi tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
     .vm-section-title h2 {
         font-size: 2.8rem;
@@ -727,7 +717,7 @@ button {
 }
 
 /* =========================================
-   7. LAYANAN KAMI (FULL RESPONSIVE)
+   LAYANAN KAMI (FULL RESPONSIVE)
 ========================================= */
 .layanan-section {
     width: 100%;
@@ -862,7 +852,6 @@ button {
     z-index: 1;
 }
 
-/* Breakpoint HP: Layanan 1 kolom */
 @media (max-width: 600px) {
     .layanan-section {
         padding: 60px 20px;
@@ -882,7 +871,6 @@ button {
     }
 }
 
-/* Breakpoint HP Besar: Layanan 1 kolom */
 @media (min-width: 601px) and (max-width: 768px) {
     .layanan-section {
         padding: 70px 20px;
@@ -898,7 +886,6 @@ button {
     }
 }
 
-/* Breakpoint Tablet: Layanan 2 kolom */
 @media (min-width: 769px) and (max-width: 1024px) {
     .layanan-section {
         padding: 80px 20px;
@@ -914,7 +901,6 @@ button {
     }
 }
 
-/* Breakpoint Laptop: Layanan 3 kolom */
 @media (min-width: 1025px) {
     .layanan-grid {
         grid-template-columns: 1fr 1fr 1fr;
@@ -923,7 +909,7 @@ button {
 }
 
 /* =========================================
-   8. GALERI (AUTO SLIDING CAROUSEL)
+   GALERI (AUTO SLIDING CAROUSEL)
 ========================================= */
 .galeri-section {
     width: 100%;
@@ -1071,7 +1057,6 @@ button {
     border-radius: 10px;
 }
 
-/* Breakpoint HP: Galeri mobile */
 @media (max-width: 768px) {
     .galeri-section {
         padding: 60px 20px;
@@ -1093,7 +1078,6 @@ button {
     }
 }
 
-/* Breakpoint Tablet: Galeri tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
     .galeri-section {
         padding: 80px 20px;
@@ -1109,7 +1093,248 @@ button {
 }
 
 /* =========================================
-   9. FOOTER (FULL RESPONSIVE)
+   CLIENT (LOGO GRID)
+========================================= */
+.client-section {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 80px 20px;
+    gap: 40px;
+}
+
+.client-title-wrap {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.client-title {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.client-title-white {
+    color: #333333;
+}
+
+.client-title-red {
+    color: #d32f2f;
+}
+
+.client-divider {
+    width: 80px;
+    height: 4px;
+    background-color: #d32f2f;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+.client-section .section-description {
+    color: #666;
+    font-size: 1.05rem;
+    margin: 10px auto 20px auto;
+}
+
+.client-grid {
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-logo {
+    width: 100%;
+    height: 140px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.client-logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.client-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .client-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .client-logo {
+        height: 90px;
+    }
+
+    .client-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* =========================================
+   FORM PEMESANAN
+========================================= */
+.order-section {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 60px 20px;
+    gap: 40px;
+}
+
+.order-title-wrap {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.order-title {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.order-title-white {
+    color: #333333;
+}
+
+.order-title-red {
+    color: #d32f2f;
+}
+
+.order-divider {
+    width: 80px;
+    height: 4px;
+    background-color: #d32f2f;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+.order-form-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.form-group textarea {
+    height: auto;
+    padding: 15px;
+    line-height: 1.5;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #d32f2f;
+}
+
+.order-btn {
+    width: 100%;
+    height: 50px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+}
+
+.order-btn:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 768px) {
+    .order-title {
+        font-size: 2.5rem;
+    }
+
+    .order-form {
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+/* =========================================
+   FOOTER
 ========================================= */
 .footer-modern {
     position: relative;
@@ -1246,609 +1471,6 @@ button {
     background-color: #0d0d0d;
 }
 
-/* Breakpoint HP: Footer 1 kolom */
-@media (max-width: 600px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 0 15px 30px 15px;
-    }
-
-    .footer-col {
-        text-align: center;
-    }
-
-    .footer-logo {
-        justify-content: center;
-    }
-
-    .footer-heading::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .footer-contact-list li {
-        justify-content: center;
-    }
-}
-
-/* Breakpoint HP Besar: Footer 1 kolom */
-@media (min-width: 601px) and (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer-col {
-        text-align: center;
-    }
-
-    .footer-logo {
-        justify-content: center;
-    }
-
-    .footer-heading::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .footer-contact-list li {
-        justify-content: center;
-    }
-}
-
-/* Breakpoint Tablet: Footer 2 kolom */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-
-    .footer-col {
-        text-align: center;
-    }
-
-    .footer-logo {
-        justify-content: center;
-    }
-
-    .footer-heading::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-/* =========================================
-   10. OVERRIDE TAMBAHAN (FORCE RESPONSIVE)
-========================================= */
-/* Jika masih ada masalah di HP, kode ini memaksa elemen menyesuaikan */
-@media (max-width: 600px) {
-    .navbar .logo-text {
-        font-size: 0.9rem;
-    }
-
-    .btn-wa {
-        width: 35px;
-        height: 35px;
-        padding: 0;
-        border-radius: 50%;
-        justify-content: center;
-    }
-
-    .btn-wa .wa-text {
-        display: none;
-    }
-
-    .hero-bri-title {
-        font-size: 2rem;
-    }
-
-    .about-bri-text h2 {
-        font-size: 2rem;
-    }
-}
-/* =========================================
-   FLOATING WHATSAPP / HOTLINE BUTTON
-========================================= */
-.floating-wa {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #25D366; /* Warna hijau WhatsApp */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    z-index: 9999;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.floating-wa:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-.floating-wa-text {
-    position: absolute;
-    bottom: 70px;
-    right: 0;
-    background-color: #333;
-    color: white;
-    font-size: 0.8rem;
-    padding: 5px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    pointer-events: none;
-}
-
-.floating-wa:hover .floating-wa-text {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive di HP */
-@media (max-width: 768px) {
-    .floating-wa {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-        bottom: 15px;
-        right: 15px;
-    }
-}
-/* =========================================
-   DESKRIPSI SECTION (TAGLINE)
-========================================= */
-.section-description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #aaa;
-    text-align: center;
-    max-width: 600px;
-    margin: 10px auto 30px auto;
-    font-weight: 400;
-}
-
-/* Responsive di HP */
-@media (max-width: 768px) {
-    .section-description {
-        font-size: 0.95rem;
-        margin: 10px auto 20px auto;
-    }
-}
-
-/* =========================================
-   OUR CLIENT (LOGO BESAR & RAPAT)
-========================================= *
-/* =========================================
-   OUR CLIENT (LOGO BESAR & RAPAT - BACKGROUND TETAP PUTIH)
-========================================= */
-.client-section {
-    width: 100%;
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    padding: 80px 20px;
-    gap: 40px;
-}
-
-.client-title-wrap {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.client-title {
-    font-size: 3.2rem;
-    line-height: 1.2;
-    font-weight: 800;
-    font-family: 'Poppins', sans-serif;
-}
-
-.client-title-white {
-    color: #333333;
-}
-
-.client-title-red {
-    color: #d32f2f;
-}
-
-.client-divider {
-    width: 80px;
-    height: 4px;
-    background-color: #d32f2f;
-    margin: 15px auto 0 auto;
-    border-radius: 2px;
-}
-
-/* Deskripsi di bawah judul */
-.client-section .section-description {
-    color: #666;
-    font-size: 1.05rem;
-    margin: 10px auto 20px auto;
-}
-
-/* LOGO GRID - LOGO BESAR & RAPAT */
-.client-grid {
-    max-width: 1000px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
-}
-
-.client-logo {
-    width: 100%;
-    height: 140px;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.7;
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.client-logo:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.client-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* Responsive di HP */
-@media (max-width: 768px) {
-    .client-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .client-logo {
-        height: 90px;
-    }
-
-    .client-title {
-        font-size: 2.5rem;
-    }
-}/
-.client-grid {
-    max-width: 1000px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Kolom lebih lebar */
-    gap: 15px; /* Jarak antar logo lebih rapat */
-    align-items: center;
-    justify-content: center;
-}
-
-.client-logo {
-    width: 100%;
-    height: 140px; /* LOGO LEBIH BESAR */
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.7;
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.client-logo:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.client-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* Responsive di HP */
-@media (max-width: 768px) {
-    .client-grid {
-        grid-template-columns: 1fr 1fr; /* 2 kolom di HP */
-        gap: 10px;
-    }
-
-    .client-logo {
-        height: 90px; /* Di HP tetap besar */
-    }
-
-    .client-title {
-        font-size: 2.5rem;
-    }
-}
-/* =========================================
-   FORM PEMESANAN (KOMPLIT & HUMAN TOUCH)
-========================================= */
-.order-section {
-    width: 100%;
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    padding: 60px 20px;
-    gap: 40px;
-}
-
-.order-title-wrap {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.order-title {
-    font-size: 3.2rem;
-    line-height: 1.2;
-    font-weight: 800;
-    font-family: 'Poppins', sans-serif;
-}
-
-.order-title-white {
-    color: #333333;
-}
-
-.order-title-red {
-    color: #d32f2f;
-}
-
-.order-divider {
-    width: 80px;
-    height: 4px;
-    background-color: #d32f2f;
-    margin: 15px auto 0 auto;
-    border-radius: 2px;
-}
-
-.order-form-container {
-    max-width: 600px;
-    width: 100%;
-}
-
-.order-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-/* Dua kolom sejajar (Nama & Telepon) */
-.form-row {
-    display: flex;
-    gap: 15px;
-}
-
-.form-row .form-group {
-    flex: 1;
-}
-
-/* Input Fields */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #333;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    height: 45px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 0 15px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    transition: border-color 0.3s;
-}
-
-.form-group textarea {
-    height: auto;
-    padding: 15px;
-    line-height: 1.5;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #d32f2f;
-}
-
-/* Submit Button */
-.order-btn {
-    width: 100%;
-    height: 50px;
-    background-color: #d32f2f;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-}
-
-.order-btn:hover {
-    background-color: #b71c1c;
-    transform: translateY(-2px);
-}
-
-.order-btn:active {
-    transform: scale(0.97);
-}
-
-/* Responsive di HP */
-@media (max-width: 768px) {
-    .order-title {
-        font-size: 2.5rem;
-    }
-
-    .order-form {
-        padding: 20px;
-    }
-
-    .form-row {
-        flex-direction: column;
-    }
-}
-
-/* =========================================
-   FOOTER (PERUSAHAAN & LAYANAN SEJAJAR)
-========================================= */
-.footer-modern {
-    position: relative;
-    width: 100%;
-    background-color: #0a0a0a;
-    padding-top: 60px;
-    margin-top: 50px;
-}
-
-.footer-accent {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, #e60000, #ff4d4d, #e60000);
-}
-
-.footer-container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
-    padding: 0 20px 40px 20px;
-}
-
-/* KIRI: LOGO & DESKRIPSI */
-.footer-col footer-brand {
-    color: #d1d1d1;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.footer-logo-img {
-    height: 40px;
-    width: auto;
-    margin-right: 10px;
-}
-
-.footer-brand-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 1px;
-}
-
-.footer-desc {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #999;
-    text-align: justify;
-}
-
-/* MENU */
-.footer-menu {
-    color: #d1d1d1;
-}
-
-.footer-heading {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 15px;
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 8px;
-}
-
-.footer-links li a {
-    text-decoration: none;
-    color: #999;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.footer-links li a:hover {
-    color: #e60000;
-}
-
-/* KONTAK */
-.footer-contact {
-    color: #d1d1d1;
-}
-
-.footer-contact-list {
-    list-style: none;
-}
-
-.footer-contact-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: #999;
-}
-
-.footer-contact-list li i {
-    color: #e60000;
-    margin-right: 10px;
-    font-size: 0.9rem;
-}
-
-.footer-hours h5 {
-    color: #ffffff;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-}
-
-.footer-hours p {
-    font-size: 0.8rem;
-    color: #999;
-}
-
-/* SOCIAL MEDIA */
 .footer-social-section {
     max-width: 1200px;
     width: 100%;
@@ -1889,17 +1511,6 @@ button {
     transform: translateY(-3px);
 }
 
-/* BOTTOM */
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    padding: 20px;
-    font-size: 0.8rem;
-    color: #888;
-    background-color: #0d0d0d;
-}
-
-/* RESPONSIVE DI HP: Menu jadi 2 kolom sejajar */
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr 1fr;
@@ -1918,5 +1529,104 @@ button {
 
     .footer-contact {
         grid-column: 1 / -1;
+    }
+}
+
+/* =========================================
+   FLOATING WHATSAPP
+========================================= */
+.floating-wa {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.floating-wa:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.floating-wa-text {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background-color: #333;
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-wa:hover .floating-wa-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .floating-wa {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* =========================================
+   DESKRIPSI SECTION
+========================================= */
+.section-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #aaa;
+    text-align: center;
+    max-width: 600px;
+    margin: 10px auto 30px auto;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .section-description {
+        font-size: 0.95rem;
+        margin: 10px auto 20px auto;
+    }
+}
+
+.contact-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .navbar .logo-text {
+        font-size: 0.9rem;
+    }
+
+    .hero-bri-title {
+        font-size: 2rem;
+    }
+
+    .about-bri-text h2 {
+        font-size: 2rem;
     }
 }
