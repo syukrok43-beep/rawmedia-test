@@ -405,12 +405,12 @@ button {
     }
 
     .hero-bri-transparent-img {
-        display: block;
+        display: block; /* JANGAN DISEMBUNYIKAN */
         position: static;
         top: auto;
         right: auto;
         transform: none;
-        max-width: 95%;
+        max-width: 100%; /* Foto selebar layar */
         width: 100%;
         height: auto;
         margin-top: 30px;
