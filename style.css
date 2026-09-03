@@ -1082,8 +1082,8 @@ button {
     cursor: pointer;
     text-align: center;
 }
-/* =========================================
-   CLIENT (AUTO SCROLL / MARQUEE)
+//* =========================================
+   CLIENT (2 BARIS AUTO SCROLL / MARQUEE)
 ========================================= */
 .client-section {
     width: 100%;
@@ -1134,18 +1134,29 @@ button {
     display: flex;
 }
 
-/* TRACK YANG BERGERAK */
+/* TRACK YANG BERGERAK KE KIRI (BARIS 1) */
 .client-marquee-track {
     display: flex;
     gap: 20px;
     padding-bottom: 20px;
-    animation: clientScroll 25s linear infinite;
+    animation: clientScrollLeft 6s linear infinite;
+}
+
+/* TRACK YANG BERGERAK KE KANAN (BARIS 2) */
+.client-marquee-track.right {
+    animation: clientScrollRight 6s linear infinite;
 }
 
 /* EFEK LOOPING: KEDUA TRACK TERUS BERGERAK */
 .client-marquee-track + .client-marquee-track {
     position: absolute;
     left: 100%;
+}
+
+/* TRACK KANAN: DUPLIKAT BERADA DI SEBELAH KIRI */
+.client-marquee-track.right + .client-marquee-track.right {
+    position: absolute;
+    left: -100%;
 }
 
 /* LOGO */
@@ -1171,13 +1182,23 @@ button {
     object-fit: contain;
 }
 
-/* ANIMASI BERGESER */
-@keyframes clientScroll {
+/* ANIMASI BERGESER KE KIRI */
+@keyframes clientScrollLeft {
     from {
         transform: translateX(0);
     }
     to {
         transform: translateX(-100%);
+    }
+}
+
+/* ANIMASI BERGESER KE KANAN */
+@keyframes clientScrollRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
     }
 }
 
