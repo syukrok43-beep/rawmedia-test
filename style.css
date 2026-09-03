@@ -1,5 +1,9 @@
+/* ==========================================================================
+   RAW MEDIA INDONESIA - CSS MASTER 100% LENGKAP
+========================================================================== */
+
 /* =========================================
-   RESET & BASIC STYLES
+   1. RESET & BASIC STYLES
 ========================================= */
 * {
     margin: 0;
@@ -28,7 +32,7 @@ button {
 }
 
 /* =========================================
-   NAVBAR (FULL RESPONSIVE)
+   2. NAVBAR (FULL RESPONSIVE)
 ========================================= */
 .navbar {
     position: fixed;
@@ -190,7 +194,7 @@ button {
 }
 
 /* =========================================
-   MOBILE MENU
+   3. MOBILE MENU
 ========================================= */
 .mobile-menu {
     position: fixed;
@@ -309,7 +313,7 @@ button {
 }
 
 /* =========================================
-   HERO (FOTO TRANSPARAN DI PINGGIR KANAN)
+   4. HERO (FOTO TRANSPARAN DI PINGGIR KANAN)
 ========================================= */
 .hero-bri-style {
     width: 100%;
@@ -369,11 +373,11 @@ button {
     bottom: 0;
     right: 0;
     max-width: 800px;
-    width: auto; /* Foto mengikuti tinggi hero */
-    height: 100%; /* Ini membuat foto setinggi layar */
+    width: auto;
+    height: 100%;
     z-index: 2;
-    object-fit: cover; /* Foto menutupi sisi kanan dengan rapi */
-    object-position: center bottom; /* Kaki foto menempel di bawah */
+    object-fit: cover;
+    object-position: center bottom;
 }
 
 @media (max-width: 768px) {
@@ -405,12 +409,12 @@ button {
     }
 
     .hero-bri-transparent-img {
-        display: block; /* JANGAN DISEMBUNYIKAN */
+        display: block;
         position: static;
         top: auto;
         right: auto;
         transform: none;
-        max-width: 100%; /* Foto selebar layar */
+        max-width: 100%;
         width: 100%;
         height: auto;
         margin-top: 30px;
@@ -420,7 +424,7 @@ button {
 }
 
 /* =========================================
-   TENTANG KAMI
+   5. TENTANG KAMI
 ========================================= */
 .about-bri-style {
     width: 100%;
@@ -552,7 +556,7 @@ button {
 }
 
 /* =========================================
-   VISI & MISI
+   6. VISI & MISI
 ========================================= */
 .visi-misi-section {
     width: 100%;
@@ -560,18 +564,9 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0a0a0a;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background: linear-gradient(135deg, #0a0a0a 80%, #1a0000 100%);
     padding: 80px 20px;
-}
-
-.vm-wrapper {
-    max-width: 900px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    position: relative;
 }
 
 .vm-section-title {
@@ -620,11 +615,13 @@ button {
     position: relative;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .vm-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-color: #ff4d4d;
 }
 
 .vm-icon-area {
@@ -717,7 +714,7 @@ button {
 }
 
 /* =========================================
-   LAYANAN KAMI (FULL RESPONSIVE)
+   7. LAYANAN KAMI (FULL RESPONSIVE)
 ========================================= */
 .layanan-section {
     width: 100%;
@@ -909,7 +906,7 @@ button {
 }
 
 /* =========================================
-   GALERI (AUTO SLIDING CAROUSEL)
+   8. GALERI (GRID + LIGHTBOX)
 ========================================= */
 .galeri-section {
     width: 100%;
@@ -953,34 +950,58 @@ button {
     border-radius: 2px;
 }
 
-.galeri-slider {
+.galeri-grid {
     max-width: 1000px;
     width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.galeri-item {
     position: relative;
+    width: 100%;
+    height: 350px;
     overflow: hidden;
     border-radius: 15px;
-    background: #1a1a1a;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.galeri-slider-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
+.galeri-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-.galeri-slide {
-    min-width: 100%;
-    height: 500px;
-    position: relative;
-}
-
-.galeri-slide img {
+.galeri-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s;
 }
 
-.galeri-slide-overlay {
+.galeri-item:hover img {
+    transform: scale(1.1);
+}
+
+.galeri-item::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    z-index: 2;
+    transition: border-color 0.3s;
+}
+
+.galeri-item:hover::before {
+    border-color: #e60000;
+}
+
+.galeri-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -990,71 +1011,17 @@ button {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding: 30px;
+    padding: 20px;
+    z-index: 3;
 }
 
-.galeri-slide-caption {
-    font-size: 1.4rem;
+.galeri-caption {
+    font-size: 1.1rem;
     font-weight: 700;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
-}
-
-.galeri-prev,
-.galeri-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: background 0.3s;
-}
-
-.galeri-prev {
-    left: 15px;
-}
-
-.galeri-next {
-    right: 15px;
-}
-
-.galeri-prev:hover,
-.galeri-next:hover {
-    background: rgba(255, 255, 255, 0.7);
-    color: #000;
-}
-
-.galeri-dots {
-    position: absolute;
-    bottom: 15px;
-    display: flex;
-    gap: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-.galeri-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.galeri-dot.active {
-    background: #ffffff;
-    width: 25px;
-    border-radius: 10px;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -1066,34 +1033,57 @@ button {
         font-size: 2.2rem;
     }
 
-    .galeri-slide {
-        height: 250px;
+    .galeri-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
-    .galeri-prev,
-    .galeri-next {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .galeri-section {
-        padding: 80px 20px;
-    }
-
-    .galeri-title {
-        font-size: 2.7rem;
-    }
-
-    .galeri-slide {
-        height: 400px;
+    .galeri-item {
+        height: 300px;
     }
 }
 
 /* =========================================
-   CLIENT (LOGO GRID)
+   9. LIGHTBOX (FOTO DIPERBESAR)
+========================================= */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.lightbox.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    text-align: center;
+}
+/* =========================================
+   CLIENT (AUTO SCROLL / MARQUEE)
 ========================================= */
 .client-section {
     width: 100%;
@@ -1135,24 +1125,32 @@ button {
     border-radius: 2px;
 }
 
-.client-section .section-description {
-    color: #666;
-    font-size: 1.05rem;
-    margin: 10px auto 20px auto;
-}
-
-.client-grid {
-    max-width: 1000px;
+/* MARQUEE CONTAINER */
+.client-marquee {
+    max-width: 1100px;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    display: flex;
 }
 
+/* TRACK YANG BERGERAK */
+.client-marquee-track {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    animation: clientScroll 25s linear infinite;
+}
+
+/* EFEK LOOPING: KEDUA TRACK TERUS BERGERAK */
+.client-marquee-track + .client-marquee-track {
+    position: absolute;
+    left: 100%;
+}
+
+/* LOGO */
 .client-logo {
-    width: 100%;
+    width: 200px;
     height: 140px;
     background-color: transparent;
     display: flex;
@@ -1173,23 +1171,34 @@ button {
     object-fit: contain;
 }
 
-@media (max-width: 768px) {
-    .client-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+/* ANIMASI BERGESER */
+@keyframes clientScroll {
+    from {
+        transform: translateX(0);
     }
+    to {
+        transform: translateX(-100%);
+    }
+}
 
-    .client-logo {
-        height: 90px;
+/* RESPONSIVE DI HP */
+@media (max-width: 768px) {
+    .client-section {
+        padding: 60px 20px;
     }
 
     .client-title {
         font-size: 2.5rem;
     }
+
+    .client-logo {
+        width: 150px;
+        height: 100px;
+    }
 }
 
 /* =========================================
-   FORM PEMESANAN
+   11. FORM PEMESANAN (LENGKAP)
 ========================================= */
 .order-section {
     width: 100%;
@@ -1334,7 +1343,7 @@ button {
 }
 
 /* =========================================
-   FOOTER
+   12. FOOTER
 ========================================= */
 .footer-modern {
     position: relative;
@@ -1533,7 +1542,7 @@ button {
 }
 
 /* =========================================
-   FLOATING WHATSAPP
+   13. FLOATING WHATSAPP
 ========================================= */
 .floating-wa {
     position: fixed;
@@ -1590,7 +1599,7 @@ button {
 }
 
 /* =========================================
-   DESKRIPSI SECTION
+   14. DESKRIPSI SECTION
 ========================================= */
 .section-description {
     font-size: 1.1rem;
