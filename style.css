@@ -379,7 +379,6 @@ button {
     object-fit: cover;
     object-position: center bottom;
 }
-
 @media (max-width: 768px) {
     .hero-bri-style {
         padding: 0 20px;
@@ -414,12 +413,13 @@ button {
         top: auto;
         right: auto;
         transform: none;
-        max-width: 100%;
-        width: 100%;
+        max-width: 140%; /* PERBESAR KE 140% */
+        width: 140%;     /* PERBESAR LEBARNYA */
         height: auto;
         margin-top: 30px;
         z-index: 2;
-        object-fit: contain;
+        object-fit: cover; /* GANTI contain menjadi cover supaya lebih penuh */
+        padding: 0 -20px;  /* Menjangkau tepi layar */
     }
 }
 
